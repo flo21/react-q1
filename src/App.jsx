@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PokemonCard from './components/PokemonCard';
 import NavBar from './components/NavBar';
 import PropTypes from "prop-types";
@@ -38,6 +38,13 @@ PokemonCard.propTypes = {
 }
 
 function App() {
+  useEffect(
+    () =>  {
+      alert("hello pokemon trainer :)");
+    }, 
+    []
+ );
+
   const [pokemonIndex, setPokemonIndex] = useState(0);
 
   return (
