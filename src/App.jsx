@@ -40,30 +40,13 @@ PokemonCard.propTypes = {
 function App() {
   const [pokemonIndex, setPokemonIndex] = useState(0);
 
-  const handlePrevious = () => {
-    if (pokemonIndex > 0) {
-      setPokemonIndex(pokemonIndex - 1);
-    }
-  };
-
-  const handleNext = () => {
-    if (pokemonIndex < pokemonList.length - 1) {
-      setPokemonIndex(pokemonIndex + 1);
-    }
-  };
-
-  const showPrev = pokemonIndex > 0;
-  const showNext = pokemonIndex < pokemonList.length - 1;
-
   return (
-    <div className="App">
-      <NavBar 
-        onPrevClick={handlePrevious} 
-        onNextClick={handleNext} 
-        showPrev={showPrev} 
-        showNext={showNext} 
-      />
+    <div className="affichage">
       <PokemonCard pokemon={pokemonList[pokemonIndex]} />
+      <NavBar
+        pokemonList={pokemonList}
+        setPokemonIndex={setPokemonIndex}
+      />
     </div>
     
   );

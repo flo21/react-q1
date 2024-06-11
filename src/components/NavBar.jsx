@@ -1,10 +1,13 @@
 import React from 'react';
 
-const NavBar = ({ onPrevClick, onNextClick, showPrev, showNext }) => {
+const NavBar = ({ pokemonList, setPokemonIndex }) => {
   return (
     <div>
-      {showPrev && <button onClick={onPrevClick}>Précédent</button>}
-      {showNext && <button onClick={onNextClick}>Suivant</button>}
+      {pokemonList.map((pokemon, index) => (
+        <button key={index} onClick={() => setPokemonIndex(index)}>
+          {pokemon.name}
+        </button>
+      ))}
     </div>
   );
 };
