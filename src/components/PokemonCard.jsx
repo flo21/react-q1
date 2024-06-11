@@ -1,19 +1,6 @@
 import React from 'react';
 
-const pokemonList = [
-  {
-    name: "bulbasaur",
-    imgSrc:
-      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
-  },
-  {
-    name: "mew",
-  },
-];
-
-function PokemonCard() {
-  const pokemon = pokemonList[0]; // Change to pokemonList[1] for Mew
-
+function PokemonCard({ pokemon }) {
   return (
     <div className="pokemon-card">
       <h1>{pokemon.name}</h1>
